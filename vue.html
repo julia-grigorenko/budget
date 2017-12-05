@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src=" https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.8.1/vue-material.css">
+</head>
+<body>
+<div id="app">
+    <form>
+        <input v-model="message.date">
+        <input v-model="message.time">
+        <input v-model="message.product">
+        <input v-model="message.price">
+        <button type="submit">SAVE</button>
+    </form>
+    {{ message }}
+    <button v-on:click="greet">Send</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: {
+               date: "111",
+               time: "",
+               product: "",
+               price: ""
+            }
+        },
+        methods: {
+          greet: function (event) {
+            console.log(this.message);
+            alert(this.message);
+          }
+        }
+    });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.8.1/vue-material.js"></script>
+</body>
+</html>
