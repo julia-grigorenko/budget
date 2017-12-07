@@ -19,4 +19,13 @@ then
 	fi
 fi
 
-cd /usr/sbin/ && ./nginx -s reload -t -v
+/usr/sbin/nginx -s reload -t -v
+
+if ! find travis-lint
+then
+	git clone https://github.com/travis-ci/travis-lint \
+		&& cp ./travis-lint/bin/travis-lint ./lint \
+		&& rm -rf ./travis-lint \
+		&& mv lint travis-lint \
+		&& ./travis-lint;
+fi
