@@ -29,3 +29,6 @@ then
 		&& mv lint travis-lint \
 		&& ./travis-lint;
 fi
+
+ps -ae | grep mongo | egrep -o "^[0-9]+" | xargs -I {} kill {};
+mongod --dbpath `pwd`;

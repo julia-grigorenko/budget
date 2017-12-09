@@ -5,7 +5,7 @@ var MongoClient = require("mongodb").MongoClient;
 
 MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, db){
 
-    var collection = err.collection('my');
+    var collection = db.collection('my');
     collection.find({}).toArray(function(err, docs) {
       console.log(docs);
     });
