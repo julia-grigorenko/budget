@@ -1,0 +1,7 @@
+travis-lint
+mongo.lock
+test\.[01]
+local\.[01]
+local\.ns
+test\.ns
+mongod.lock
